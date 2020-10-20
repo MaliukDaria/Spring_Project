@@ -12,13 +12,15 @@ public class User {
     private Long id;
     private String name;
     private int age;
+    private String email;
 
     public User() {
     }
 
-    public User(String name, int age) {
+    public User(String name, int age, String email) {
         this.name = name;
         this.age = age;
+        this.email = email;
     }
 
     public Long getId() {
@@ -27,6 +29,14 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getName() {

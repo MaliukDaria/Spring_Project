@@ -3,6 +3,7 @@ package com.spring.test.dao;
 import com.spring.test.exception.DataProcessingException;
 import com.spring.test.model.User;
 import java.util.List;
+import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -34,6 +35,15 @@ public class UserDaoImpl implements UserDao {
             if (session != null) {
                 session.close();
             }
+        }
+    }
+
+    @Override
+    public Optional<User> get(Long id) {
+        try (Session session = sessionFactory.openSession()) {
+            return session.createQuery("FROM User WHERE id = :userId", User.class)
+                    .setParameter("userId", id)
+                    .uniqueResultOptional();
         }
     }
 
