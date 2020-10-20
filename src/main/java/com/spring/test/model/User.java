@@ -10,17 +10,19 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private int age;
+    private String name;
     private String email;
+    private String password;
 
     public User() {
     }
 
-    public User(String name, int age, String email) {
+    public User(String name, int age, String email, String password) {
         this.name = name;
         this.age = age;
         this.email = email;
+        this.password = password;
     }
 
     public Long getId() {
@@ -37,6 +39,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
