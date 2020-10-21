@@ -6,7 +6,6 @@ import com.spring.test.service.UserService;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/users")
-@Controller
 public class UserController {
     private final UserService userService;
 
